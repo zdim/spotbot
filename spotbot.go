@@ -38,10 +38,17 @@ func main() {
 				s.InteractionRespond(ixn.Interaction, &discordgo.InteractionResponse{
 					Type: discordgo.InteractionResponseChannelMessageWithSource,
 					Data: &discordgo.InteractionResponseData{
-						TTS:             false,
-						Content:         "Response message",
-						Components:      []discordgo.MessageComponent{},
-						Embeds:          []*discordgo.MessageEmbed{},
+						TTS:        false,
+						Content:    "Response message",
+						Components: []discordgo.MessageComponent{},
+						Embeds: []*discordgo.MessageEmbed{
+							{
+								URL:         "https://open.spotify.com/album/7uQZYsvK048nZWgB10cMbe?si=K7W2DAVlQ2W82w5DOIhUzA",
+								Title:       "Album Name",
+								Description: "Artist Name - Year",
+								Image:       &discordgo.MessageEmbedImage{URL: "https://i.scdn.co/image/ab67616d0000b27373601c5b76c54845c4941b32"},
+							},
+						},
 						AllowedMentions: &discordgo.MessageAllowedMentions{},
 						Files:           []*discordgo.File{},
 						Flags:           0,
